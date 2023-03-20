@@ -1,0 +1,31 @@
+.summary-div{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading{
+    padding: 2%;
+}
+.inputd-field{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 82px;
+    padding: 6px 4px;
+}
+.cart-items{
+    text-align: center;
+    border: 1px solid;
+    width: 40%;
+}
+.items{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .pay-btn{
+
+} */

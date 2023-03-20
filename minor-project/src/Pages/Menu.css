@@ -1,0 +1,7 @@
+.dish-scroll{
+    
+        overflow: scroll;
+        height: 500px;
+        display: flex;
+    
+}

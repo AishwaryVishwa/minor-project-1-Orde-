@@ -1,0 +1,31 @@
+.listings {
+    
+    background-color: #ffffffc9;
+    border-radius: 3px;
+    border-bottom: 1px solid #e9dcdc96;
+    width: 292px;
+    height: 281px;
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+    /* border: 1px solid; */
+    margin: 19px;
+    position: relative;
+}
+
+.dish-img {
+     height: 188px;
+    /* width: 88px; */
+    background-color: burlywood;
+    border-radius: 8px;
+}
+
+.addbtn{
+    background-color: #a6c4e7;
+    width: 23%;
+    position: absolute;
+    top: 82%;
+    left: 66%;
+}
+
+
