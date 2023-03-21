@@ -3,5 +3,21 @@
         overflow: scroll;
         height: 500px;
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     
+}
+
+.res-data{
+        /* border: 1px solid; */
+        width: 472px;
+        padding-left: 32px;
+}
+
+.head{
+        font-size: 35px;
+}
+
+p{
+        font-size: small;
 }

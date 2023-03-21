@@ -9,6 +9,7 @@ const arr = [
         rate: 100,
         qty:1
     },
+    
     {
         id:'02',
         name: 'Lemonade',
@@ -29,16 +30,35 @@ const arr = [
     },
     {
         id:'05',
-        name: 'Orange juice',
+        name: 'Apple juice',
         rate: 10,
         qty:1
     },
     {
         id:'06',
-        name: 'Lemon Juice',
+        name: 'Dosa',
+        rate: 100,
+        qty:1
+    },
+    {
+        id:'07',
+        name: 'Burger',
+        rate: 120,
+        qty:1
+    },
+    {
+        id:'08',
+        name: 'Latte',
+        rate: 70,
+        qty:1
+    },
+    {
+        id:'09',
+        name: 'Tea',
         rate: 10,
         qty:1
-    }
+    },
+    
 ]
 
 

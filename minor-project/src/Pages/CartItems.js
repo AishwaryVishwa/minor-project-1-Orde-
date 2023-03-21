@@ -11,9 +11,7 @@ function CartItems({cartItems}) {
 
                 <div className="dish-img-name-rate">
 
-                    <div className="item-img">
-
-                    </div>
+                    
                     <div className="dish-name">
                         {cartItems.name}
                     </div>

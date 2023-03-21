@@ -7,6 +7,7 @@ import CartContext from './CartContext';
 import Opening from './Pages/Opening';
 import Owner from './Pages/Owner';
 import Login from './Pages/Login';
+import Analysis from './Pages/Analysis'
 import Registration from './Pages/Registration';
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
               <Route path='/owner' element={<Owner/>}></Route>
               <Route path='/register' element={<Registration/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
-
+              <Route path='/analysis' element={<Analysis/>}></Route>
           </Routes>
        </BrowserRouter>    
     </TableNumContext>

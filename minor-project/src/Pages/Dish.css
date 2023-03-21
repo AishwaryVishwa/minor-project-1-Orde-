@@ -1,9 +1,11 @@
 .listings {
-    
     background-color: #ffffffc9;
     border-radius: 3px;
     border-bottom: 1px solid #e9dcdc96;
     width: 292px;
+    border-radius: 6px;
+    background: #fafafa;
+    box-shadow: 20px 17px 30px 2px #d5d5d5, -20px -20px 60px #ffffff;
     height: 281px;
     display: flex;
     flex-direction: column;
@@ -21,11 +23,34 @@
 }
 
 .addbtn{
-    background-color: #a6c4e7;
-    width: 23%;
-    position: absolute;
-    top: 82%;
-    left: 66%;
-}
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    width: 130px;
+    font-weight: 500;
+    margin-left: 59px;
+    height: 46px;
+    color: #000;
+    
+    margin-bottom: 6px;
 
+    background-color: #f5f4f4;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.addbtn:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .addbtn:active {
+    transform: translateY(-1px);
+  }
 

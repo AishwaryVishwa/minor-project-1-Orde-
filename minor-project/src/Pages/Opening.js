@@ -7,10 +7,15 @@ function Opening() {
     
 
     <div className="open-panel">
+          <h2>Entering as Customer or Owner</h2>
 
-        <NavLink to='/scanner' >Customer</NavLink>
+      
+        <NavLink className='open-btn' to='/scanner' >Customer</NavLink>
+     
 
-        <NavLink to='/Owner' >Owner</NavLink>
+     
+        <NavLink className='open-btn' to='/login' >Owner</NavLink>
+    
     </div>
         
 

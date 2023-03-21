@@ -14,9 +14,9 @@ function Menu() {
 
        <div className="res-data">
 
-        <h1>Our regular menu</h1>
+        <p className='head' >Our regular menu</p>
 
-        <h1>Table number :{data}</h1>
+        <p>Table number :{data}</p>
 
        </div>
      

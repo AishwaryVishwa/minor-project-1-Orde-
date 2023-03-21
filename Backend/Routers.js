@@ -95,8 +95,9 @@ Router.get('/',(req,res)=>{
     res.send('Home page')
 })
 
-Router.get('/about',authenticate,(req,res)=>{
-    res.send("about page")
+Router.get('/analysis',authenticate,(req,res)=>{
+    console.log('auth entered');
+    res.send(req.user)
 })
 
 module.exports=Router
