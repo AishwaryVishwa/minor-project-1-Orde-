@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 const bcrypt=require('bcryptjs')
-const emailSender =require('../Email')
+const {emailSender} =require('../Email')
 const jwt = require('jsonwebtoken')
 const dishSchema=new mongoose.Schema({
     name:String,
@@ -15,7 +15,8 @@ const orderSchema=new mongoose.Schema({
     TableNum:String,
     order:[],
     bill:Number,
-    today:{}
+    date:String,
+    time:String
 })
 
 
@@ -37,9 +38,9 @@ const userSchema=new mongoose.Schema({
 
 })
 
-orderSchema.post('save',function(next){
+orderSchema.post('save',async function(next){
     emailSender(this)
-    next()
+    // next()
 })
 
 userSchema.methods.generateAuth=async function(){

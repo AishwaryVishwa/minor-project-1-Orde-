@@ -30,7 +30,7 @@ function Login() {
       window.alert(data.error)
     } else {
       window.alert(data.message)
-      // navigate('/Analysis')
+      navigate('/Analysis')
     }
   }
 

@@ -46,7 +46,10 @@
 
 .opr-btns{
     
-    transform: scale(1.5);
+    color: #fff;
+    padding: 0.5em 0.8em;
+    background: rgba(249, 249, 249, 0.2);
+    border-radius: 14px;
 }
 
 .del-btn{

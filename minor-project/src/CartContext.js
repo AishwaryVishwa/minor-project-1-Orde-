@@ -116,9 +116,11 @@ const CartContext=({children})=>{
     });
 
     return(
+        <>
        <Cartcontext.Provider value={{cartState,dispatch}}>
         {children}
        </Cartcontext.Provider>
+        </>
     )
 }
 

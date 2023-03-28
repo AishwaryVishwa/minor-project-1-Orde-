@@ -30,7 +30,8 @@ function Scanner() {
 <div className="data">
 
       <p>Your table number is {data}</p>
-      {(data!=='no data'?<NavLink className='open-btn' to={'/menu'} >Open menu</NavLink>:<h1></h1>)}
+      {/* {(data!=='no data'?<NavLink className='sender' to={'/menu'} >Open menu</NavLink>:<h1></h1>)} */}
+<NavLink className='sender' to={'/menu'} >Open menu</NavLink>
 </div>
     </>
   )

@@ -54,3 +54,13 @@
     transform: translateY(-1px);
   }
 
+.dish-name-Dish{
+  font-size: 25px;
+  margin-left: 0px;
+}
+
+.dish-rate-Dish{
+  position: absolute;
+  top: 57%;
+  left: 78%;
+}

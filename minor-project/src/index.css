@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Plus+Jakarta+Sans:wght@500&family=Reem+Kufi&display=swap');
+
 *{
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  font-family: 'Reem Kufi', sans-serif;
 }
  
 

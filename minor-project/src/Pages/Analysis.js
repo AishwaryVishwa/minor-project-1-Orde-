@@ -13,30 +13,49 @@ function Analysis() {
                 }
             });
 
-            console.log(res);
-
             const data=await res.json();
             console.log(data);
+
             if(res.status!==200)
             {
                 const err=new Error(res.error)
                 throw err;
             }
-            // console.log(data)
+           
 
         } catch (error) {
             console.log(error);
-            // navigate('/login')
+            navigate('/login')
         }
+    }
+
+
+    function getdate(){
+        let today=new Date();
+        const obj=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+
+       return obj
+   }
+
+    const getOrderList=async()=>{
+         try {
+               const res=await fetch('/getOrderList')
+               const data=await res.json();
+               console.log(data);
+         } catch (error) {
+            console.log(error);
+         }
     }
     useEffect(()=>{
         
         callAnalysisPage();
+            
+        getOrderList();
 
     },[])
   return (
     <>
-       analusis
+       
     </>
   )
 }

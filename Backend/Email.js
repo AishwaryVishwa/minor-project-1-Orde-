@@ -24,7 +24,7 @@ const emailSender=(customer)=>
                ${customer.cname} your table number is ${customer.TableNum}
 
                Total billing INR ${customer.bill} 
-               at ${customer.today.time} 
+               at ${customer.time} 
                `
     };
 
@@ -38,7 +38,7 @@ const emailSender=(customer)=>
 }
 
 
-module.exports=emailSender
+module.exports={emailSender}
 
 
  

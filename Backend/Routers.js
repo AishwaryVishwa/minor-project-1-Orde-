@@ -3,26 +3,34 @@ const {orderModel} =require('./DATABASE/dishSchema')
 const {userModel}=require('./DATABASE/dishSchema')
 const bcrypt=require('bcryptjs')
 const Router=express.Router();
-const emailSender=require('./Email');
+const {emailSender}=require('./Email');
 const authenticate = require('./Middleware/authenticate');
+const jsonc = require('jsonc');
 require('./DATABASE/dbConnection')
 
 Router.post('/payment',async (req,res)=>{
-    const {cname,cemail,TableNum,order,bill,today}=req.body;
+    const {cname,cemail,TableNum,order,bill,date,time}=req.body;
   // checking if cart is empty of not
     try {
         
         if(order.length>0)
         {
             const order=new orderModel(req.body)
-            await order.save();
+            await order.save()
+            // .then(()=>{
+            //     console.log('order saved');
+            // })
+            // .catch((err)=>{
+            //     console.log(err);
+            // })
             res.send({message:"order is placed"})
         }
         else{
             res.send({message:"please fill the cart first"})
         }
     } catch (error) {
-        res.send({error:"some error happend"})
+        console.log(error);
+        
     }
 })
 
@@ -95,9 +103,25 @@ Router.get('/',(req,res)=>{
     res.send('Home page')
 })
 
-Router.get('/analysis',authenticate,(req,res)=>{
-    console.log('auth entered');
-    res.send(req.user)
+// Router.get('/analysis',(req,res)=>{
+//     console.log('auth entered');
+// //    const data= jsonc.stringify(req.user);
+//     // console.log(req.user);
+//     res.send(req.user)
+// })
+
+
+Router.get('/getOrderList',async (req,res)=>{
+    console.log('entered get order list');
+   try {
+    
+
+       const list=await orderModel.find().sort({today:-1})
+       
+       console.log(list);
+   } catch (error) {
+       console.log(error);
+   }
 })
 
 module.exports=Router

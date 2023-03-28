@@ -9,6 +9,9 @@ import Owner from './Pages/Owner';
 import Login from './Pages/Login';
 import Analysis from './Pages/Analysis'
 import Registration from './Pages/Registration';
+
+
+// import NewSummary from './Pages/NewSummary'
 const App = () => {
   return (
     <>
