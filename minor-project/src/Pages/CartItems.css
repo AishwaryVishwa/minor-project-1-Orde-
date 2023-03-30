@@ -1,8 +1,9 @@
 .cart-item{
-    background-color: aliceblue;
+    background-color: white;
     margin: 12px;
     padding-top: 7px;
-    box-shadow: 3px 4px 9px -6px black;
+    box-shadow: 9px 6px 26px -18px black;
+    
 }
 
 
@@ -22,8 +23,8 @@
 
 
 .dish-name{
-    font-size: 27px;
-    margin-left: -32px;
+    font-size: 20px;
+    /* margin-left: -32px; */
     font-weight: 600;
 }
 
@@ -46,13 +47,18 @@
 
 .opr-btns{
     
-    color: #fff;
     padding: 0.5em 0.8em;
     background: rgba(249, 249, 249, 0.2);
     border-radius: 14px;
+    border: none;
+    font-size: 21px;
+
 }
 
 .del-btn{
+   
     transform: scale(1);
+    border: none;
+    background-color: white;
 }
 

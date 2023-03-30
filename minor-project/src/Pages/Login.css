@@ -9,6 +9,7 @@
     left: 41%;
   }
   
+  
   .form {
     position: relative;
     display: flex;
@@ -22,9 +23,11 @@
   .title {
     font-weight: bold;
     font-size: 1.6rem;
+    width: 104%;
   }
   
   .subtitle {
+    width: 104%;
     font-size: 1rem;
     color: #666;
   }

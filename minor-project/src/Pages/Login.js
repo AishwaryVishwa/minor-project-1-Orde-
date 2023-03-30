@@ -7,9 +7,10 @@ function Login() {
 
   let name, value;
   const handleInput = (e) => {
+    
     name = e.target.name;
     value = e.target.value;
-
+    
     setData({ ...userData, [name]: value })
   }
   let options = {
@@ -72,10 +73,16 @@ function Login() {
               {/* <input type="email" className="input" placeholder="Email"> */}
               <input type="email" className='input' placeholder='Email' name="email" onChange={handleInput} />
                 {/* <input type="password" className="input" placeholder="Password"> */}
-                <input type="text" className='input' placeholder='Password' name='password' onChange={handleInput} />
+                <input type="password" className='input' placeholder='Password' name='password' onChange={handleInput} />
                 </div>
                 {/* <button>Sign in</button> */}
-                <button type="submit" name='login' onClick={sendData}>
+                <button type="submit" name='login' onClick={()=>{
+                  if(userData.password.length<6){
+                    return window.alert('Enter strong password')
+                  }
+                  else
+                  return sendData;
+                }}>
                    Sign in
                 </button>
               </form>

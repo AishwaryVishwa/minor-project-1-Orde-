@@ -6,6 +6,7 @@ const Router=express.Router();
 const {emailSender}=require('./Email');
 const authenticate = require('./Middleware/authenticate');
 const jsonc = require('jsonc');
+const { orderdoneEmailSender } = require('./orderdoneEmail');
 require('./DATABASE/dbConnection')
 
 Router.post('/payment',async (req,res)=>{
@@ -34,6 +35,19 @@ Router.post('/payment',async (req,res)=>{
     }
 })
 
+Router.post('/orderisdone', async(req,res)=>{
+    try{
+        console.log(req.body);
+        orderdoneEmailSender(req.body)
+        await orderModel.findByIdAndDelete(req.body._id)
+        res.send({message:'order is done'})
+    }
+    catch(err)
+    {
+        console.log(err);
+        res.send(err)
+    }
+})
 
 Router.post('/register',async (req,res)=>{
     const {name,email,password}=req.body;
@@ -103,24 +117,30 @@ Router.get('/',(req,res)=>{
     res.send('Home page')
 })
 
-// Router.get('/analysis',(req,res)=>{
-//     console.log('auth entered');
-// //    const data= jsonc.stringify(req.user);
-//     // console.log(req.user);
-//     res.send(req.user)
-// })
+Router.get('/analysis',authenticate,(req,res)=>{
+    console.log('auth entered');
+//    const data= jsonc.stringify(req.user);
+    // console.log(req.user);
+    res.send(req.user)
+})
 
 
 Router.get('/getOrderList',async (req,res)=>{
     console.log('entered get order list');
+    console.log(req.query.date);
    try {
     
 
-       const list=await orderModel.find().sort({today:-1})
-       
+       const list=await orderModel.find({date:req.query.date})
+       if(list.length===0)
+       {
+        console.log('no order today')
+       }
        console.log(list);
+        res.send(list);
    } catch (error) {
        console.log(error);
+       res.send(error)
    }
 })
 

@@ -27,13 +27,19 @@ function Dish({ DishObj, dispatchFunc }) {
 
 
                 {(cart.length != 0 && (cart.some((val) => val.id === DishObj.id))) ?
+                <div>
+
                     <button className='addbtn' >Added</button>
+                </div>
                     :
                     <button className='addbtn' onClick={() => {
                         dispatchFunc({ type: 'add-to-cart', data: DishObj })
                     }} >Add</button>
                 }
 
+            
+
+                
 
             </div>
         </>

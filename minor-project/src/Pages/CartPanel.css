@@ -23,12 +23,13 @@ h1{
         border-top: 1px solid #b39b9b;
     }
     .pay-btn{
-        background-color: blueviolet;
-        padding: 5px 55px;
-        margin-left: 28%;
+        background-color: #63e963;
+        padding: 5px 27px;
+        margin-left: 34%;
+        text-decoration: none;
+        color: whitesmoke;
         border-radius: 24px;
     }
-    
     .items-list::-webkit-scrollbar {
         width: 3px;
     }

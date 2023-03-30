@@ -9,6 +9,7 @@ import Owner from './Pages/Owner';
 import Login from './Pages/Login';
 import Analysis from './Pages/Analysis'
 import Registration from './Pages/Registration';
+import EditMenu from './Pages/EditMenu';
 
 
 // import NewSummary from './Pages/NewSummary'
@@ -34,6 +35,7 @@ const App = () => {
               <Route path='/register' element={<Registration/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/analysis' element={<Analysis/>}></Route>
+              <Route path='/editMenu' element={<EditMenu/>}></Route>
           </Routes>
        </BrowserRouter>    
     </TableNumContext>

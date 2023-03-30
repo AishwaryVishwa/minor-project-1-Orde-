@@ -16,13 +16,26 @@ function Summary() {
   console.log(name,Email)
 
      const gstCalc=(total)=>{
-            return total+((total*18)/100);
+            return total+((total*5)/100);
      }
-
+     function formatDate(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+  
+      if (month.length < 2) 
+          month = '0' + month;
+      if (day.length < 2) 
+          day = '0' + day;
+  
+      return [year, month, day].join('-');
+  }
+   
      function getdate(){
           let today=new Date();
           const obj={
-            date:today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear(),
+            date:formatDate(today),
             time:today.toLocaleTimeString()
           }
          return obj
@@ -53,7 +66,7 @@ function Summary() {
         const data= await res.json();
         
         console.log(data);
-        // window.alert()
+        window.alert(data.message)
 
       
      }
@@ -117,7 +130,7 @@ function Summary() {
                   })}
             </div>
             
-            <h1 className='totalAmm'> Total amount after 18% gst </h1>
+            <h1 className='totalAmm'> Total amount after 5% gst </h1>
             <h1 className='total'> {gstCalulated}</h1>
 
 
