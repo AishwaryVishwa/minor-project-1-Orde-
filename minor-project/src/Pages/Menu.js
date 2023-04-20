@@ -8,6 +8,7 @@ import './Menu.css'
 function Menu() {
     const {data}=useContext(Tablenumber)
     const {cartState:{products},dispatch}=useContext(Cartcontext)
+    console.log(products);
   return (
     <>
        <Header/>

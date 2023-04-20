@@ -4,9 +4,9 @@ const {emailSender} =require('../Email')
 const jwt = require('jsonwebtoken')
 const dishSchema=new mongoose.Schema({
     name:String,
-    rate:Number,
-    rating:Number,
-    img:String
+    rate:String,
+    image:String,
+    qty:Number
 })
 
 const orderSchema=new mongoose.Schema({

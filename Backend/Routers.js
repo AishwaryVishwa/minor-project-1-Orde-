@@ -1,6 +1,7 @@
 const express =require('express')
 const {orderModel} =require('./DATABASE/dishSchema')
 const {userModel}=require('./DATABASE/dishSchema')
+const {dishModel}=require('./DATABASE/dishSchema')
 const bcrypt=require('bcryptjs')
 const Router=express.Router();
 const {emailSender}=require('./Email');
@@ -34,6 +35,7 @@ Router.post('/payment',async (req,res)=>{
         
     }
 })
+
 
 Router.post('/orderisdone', async(req,res)=>{
     try{
@@ -72,6 +74,34 @@ Router.post('/register',async (req,res)=>{
     }
 
 })
+
+
+
+Router.post('/uploadDish',async (req,res)=>{
+
+
+    console.log('on upload dish');
+    console.log(req.body);
+    const {name,rate,rating,image}=req.body;
+
+    try {
+        const isPresent= await dishModel.findOne({name:name});
+        console.log(isPresent);
+        if(isPresent)
+        {
+            res.status(404).send({message:'Dish is already present'});
+        }
+        else{
+            const dish=new dishModel(req.body);
+            await dish.save();
+            res.status(200).send({message:'dish is uploaded'})
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(404).send({error:"error on uploading dish"})
+    }
+})
+
 
 Router.post('/login',async (req,res)=>{
    
@@ -113,8 +143,22 @@ Router.post('/login',async (req,res)=>{
 
 
 })
-Router.get('/',(req,res)=>{
-    res.send('Home page')
+
+Router.get('/getDishList',async (req,res)=>{
+    try {
+    
+
+        const list=await dishModel.find()
+        if(list.length===0)
+        {
+         console.log('no dishes today')
+        }
+        console.log(list);
+         res.send(list);
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
 })
 
 Router.get('/analysis',authenticate,(req,res)=>{
@@ -143,5 +187,7 @@ Router.get('/getOrderList',async (req,res)=>{
        res.send(error)
    }
 })
+
+
 
 module.exports=Router
