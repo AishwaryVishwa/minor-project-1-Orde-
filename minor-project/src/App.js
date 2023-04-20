@@ -2,6 +2,7 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Menu from './Pages/Menu';
 import Scanner from './Scanner';
 import Summary from './Pages/Summary';
+import NewSummary from './Pages/NewSummary';
 import TableNumContext from './TableNumContext';
 import CartContext from './CartContext';
 import Opening from './Pages/Opening';

@@ -7,6 +7,7 @@ function Analysis() {
     const [TableList, setTableList] = useState([]);
     const [orderList, setOrderList] = useState([]);
     const [deleteCnt,setDeletecnt]=useState(0);
+    const [table,setTable]=useState();
     const navigate = useNavigate();
 
     const orderDone=async(customer)=>{
@@ -130,6 +131,7 @@ function Analysis() {
                             return (
                                 <div className='list' onClick={() => {
                                     setOrderList(val.order)
+                                    setTable(val.TableNum)
                                 }} >
 
                                     <h2>
@@ -149,6 +151,7 @@ function Analysis() {
                             <span>Name</span>
                             <span>ID</span>
                             <span>Quantity</span>
+                            <span>Table:{table}</span>
                         </div>
                         <div className="order-list">
 

@@ -30,7 +30,7 @@ function EditMenu() {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formGroupPassword">
         <Form.Label>Dish Rating</Form.Label>
-        <Form.Control type="text" placeholder="Enter Rating" />
+        <Form.Control type="number" placeholder="Enter Rating" />
       </Form.Group>
     </Form>
     </>

@@ -28,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "react-scripts": "4.0.3",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

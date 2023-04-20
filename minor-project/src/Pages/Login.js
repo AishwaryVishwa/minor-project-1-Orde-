@@ -76,13 +76,7 @@ function Login() {
                 <input type="password" className='input' placeholder='Password' name='password' onChange={handleInput} />
                 </div>
                 {/* <button>Sign in</button> */}
-                <button type="submit" name='login' onClick={()=>{
-                  if(userData.password.length<6){
-                    return window.alert('Enter strong password')
-                  }
-                  else
-                  return sendData;
-                }}>
+                <button type="submit" name='login' onClick={sendData}>
                    Sign in
                 </button>
               </form>
