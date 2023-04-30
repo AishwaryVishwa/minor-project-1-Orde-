@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import {Tablenumber} from './TableNumContext'
 import './Scanner.css'
 function Scanner() {
-    const {data,setData}=useContext(Tablenumber)
+    const {table,setTable}=useContext(Tablenumber)
     // const [data, setData] = useState('No result');
   return (
     <>
@@ -15,7 +15,7 @@ function Scanner() {
     <QrReader
         onResult={(result, error) => {
           if (!!result) {
-            setData(result?.text);
+            setTable(result?.text);
           }
 
           if (!!error) {
@@ -29,7 +29,7 @@ function Scanner() {
 
 <div className="data">
 
-      <p>Your table number is {data}</p>
+      <p>Your table number is {table}</p>
       {/* {(data!=='no data'?<NavLink className='sender' to={'/menu'} >Open menu</NavLink>:<h1></h1>)} */}
 <NavLink className='sender' to={'/menu'} >Open menu</NavLink>
 </div>

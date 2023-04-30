@@ -11,8 +11,11 @@ function Dish({ DishObj, dispatchFunc }) {
     return (
         <>
             <div className="listings">
-                <div className="dish-img">
-
+                <div className="dish-img" style={{
+                    backgroundImage:`url(${DishObj.image})`,
+                    backgroundSize:'cover'
+                }}>
+                  
                 </div>
                 <span className="dishes">
                     <h4 className='dish-name-Dish'>{DishObj.name}</h4>
@@ -26,7 +29,7 @@ function Dish({ DishObj, dispatchFunc }) {
                 </span>
 
 
-                {(cart.length != 0 && (cart.some((val) => val.id === DishObj.id))) ?
+                {(cart.length != 0 && (cart.some((val) => val._id === DishObj._id))) ?
                 <div>
 
                     <button className='addbtn' >Added</button>

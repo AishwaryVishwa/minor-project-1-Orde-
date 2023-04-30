@@ -64,26 +64,35 @@ export const Cartcontext=createContext();
 // ]
 
 
-let arr;
+
 
 const cartReducer=(state,action)=>{
     
     switch (action.type) {
+
        case 'add-to-cart':
            
            return ({...state,cart:[...state.cart,action.data]})
       break;
 
+       case 'add-to-products':
+           
+           return ({...state,products:action.data})
+      break;
+
       case 'remove-from-cart':
             
-           return ({...state,cart:state.cart.filter((x)=>x.id!=action.id)})
+           return ({...state,cart:state.cart.filter((val)=>val._id!=action.id)})
+       break;
 
        case 'inc-qty':
             // console.log('inc-qty',action.data.qty);
             return({...state,cart:state.cart.map(a => {
+                // console.log("inc-qty",action);
+                // console.log("a's id is ",a.id);
                 let returnValue = {...a};
               
-                if (a.id == action.id) {
+                if (a._id === action.id) {
                   returnValue.qty++;
                 }
               
@@ -96,7 +105,7 @@ const cartReducer=(state,action)=>{
             return({...state,cart:state.cart.map(a => {
                 let returnValue = {...a};
               
-                if (a.id == action.id) {
+                if (a._id == action.data._id) {
                  if(returnValue.qty>1)
                  returnValue.qty--;
                 }
@@ -116,21 +125,12 @@ const cartReducer=(state,action)=>{
 
 const CartContext=({children})=>{
 
-    const [Arr,setArr]=useState();
-    useEffect(()=>{
-        console.log('context pafe');
-        fetch('/getDishList')
-        .then((res)=>res.json())
-        .then((data)=>setArr(data))
-    },[])
     
-    // console.log(Arr);
        
-    const products=Arr
+   
 
-    console.log("products are ",products);
     const [cartState,dispatch]=useReducer(cartReducer,{
-        products:products,
+        products:[],
         cart:[]
     });
      

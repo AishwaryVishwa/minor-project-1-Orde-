@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import './Summary.css'
 function Summary() {
 
-  const { data } = useContext(Tablenumber);
+  const { table } = useContext(Tablenumber);
   const { cartState: { cart } } = useContext(Cartcontext)
   const [total, setTotal] = useState(0);
   const [gstCalulated, setgstCalculated] = useState();
@@ -46,7 +46,7 @@ function Summary() {
   const orderData = {
     cname: name,
     cemail: Email,
-    TableNum: data,
+    TableNum: table,
     order: cart,
     bill: gstCalulated,
     date: getdate().date,
@@ -105,7 +105,7 @@ function Summary() {
 
 
           <form className="form">
-            <p>Table number : {data}</p>
+            <p>Table number : {table}</p>
 
             <input type="text" className="input" onChange={(event) => {
               setName(event.target.value)
@@ -129,7 +129,7 @@ function Summary() {
               return (
                 <div className='items' >
                   <span>{val.name}</span>
-                  <span>{val.rate}</span>
+                  <span>{val.rate*val.qty}</span>
                 </div>
               )
             })}

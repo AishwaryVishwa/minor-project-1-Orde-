@@ -2,10 +2,10 @@ import { createContext,useState } from "react"
 import React from 'react'
  export const Tablenumber=createContext();
 function TableNumContext({children}) {
-    const [data,setData]=useState('no data');
+    const [table,setTable]=useState(101);
   return (
     <>
-         <Tablenumber.Provider value={{data,setData}}>
+         <Tablenumber.Provider value={{table,setTable}}>
             {children}
          </Tablenumber.Provider>
     </>

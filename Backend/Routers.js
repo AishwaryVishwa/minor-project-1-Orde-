@@ -2,6 +2,7 @@ const express =require('express')
 const {orderModel} =require('./DATABASE/dishSchema')
 const {userModel}=require('./DATABASE/dishSchema')
 const {dishModel}=require('./DATABASE/dishSchema')
+const {chartModel}=require('./DATABASE/dishSchema')
 const bcrypt=require('bcryptjs')
 const Router=express.Router();
 const {emailSender}=require('./Email');
@@ -17,8 +18,25 @@ Router.post('/payment',async (req,res)=>{
         
         if(order.length>0)
         {
-            const order=new orderModel(req.body)
-            await order.save()
+            const userOrder=new orderModel(req.body) 
+            await userOrder.save()
+
+
+             order.map(async (val)=>{
+                try {
+                const found =await chartModel.findOne({name:val.name})
+                if(found)
+                {
+                    await chartModel.updateOne({name:val.name},{$inc:{qty:val.qty}})
+                }else{
+                    const newChartData=new chartModel({name:val.name,qty:val.qty});
+                    await newChartData.save()
+                    console.log('data is saved for analysis');
+                }
+                } catch (error) {
+                    console.log('error in payment method',error);
+                }
+            })
             // .then(()=>{
             //     console.log('order saved');
             // })
@@ -168,6 +186,15 @@ Router.get('/analysis',authenticate,(req,res)=>{
     res.send(req.user)
 })
 
+Router.get('/getChartdata',async(req,res)=>{
+    try {
+        const list=await chartModel.find();
+        res.send(list);
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
+})
 
 Router.get('/getOrderList',async (req,res)=>{
     console.log('entered get order list');

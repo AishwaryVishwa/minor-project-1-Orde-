@@ -5,6 +5,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Cartcontext } from '../CartContext';
 function CartItems({cartItems}) {
    const {dispatch}=useContext(Cartcontext)
+//    console.log("cart items",cartItems);
     return (
         <>
             <div className="cart-item">
@@ -24,17 +25,17 @@ function CartItems({cartItems}) {
                     <div className='operations'>
 
 
-                        <button  className='opr-btns' onClick={()=>dispatch({type:'inc-qty',data:cartItems,id:cartItems.id})} ><CiCirclePlus /></button>
+                        <button  className='opr-btns' onClick={()=>dispatch({type:'inc-qty',data:cartItems,id:cartItems._id})} ><CiCirclePlus /></button>
 
 
                         <span>{cartItems.qty}</span>
 
 
-                        <button  className="opr-btns" onClick={()=>dispatch({type:'dec-qty',data:cartItems,id:cartItems.id})} ><CiCircleMinus /></button>
+                        <button  className="opr-btns" onClick={()=>dispatch({type:'dec-qty',data:cartItems,id:cartItems._id})} ><CiCircleMinus /></button>
 
                     </div>
 
-                    <button className="del-btn" onClick={()=>dispatch({type:'remove-from-cart',id:cartItems.id})} >
+                    <button className="del-btn" onClick={()=>dispatch({type:'remove-from-cart',id:cartItems._id})} >
                         <AiOutlineDelete />
                     </button>
                 </div>

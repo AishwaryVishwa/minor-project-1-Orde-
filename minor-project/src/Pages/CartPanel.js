@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom'
 function CartPanel() {
    const {cartState:{cart}}=useContext(Cartcontext)
    const [total,setTotal]=useState(0);
-   console.log(cart);
+  //  console.log(cart);
 
   useEffect(() => {
    

@@ -29,10 +29,10 @@
     letter-spacing: 2.5px;
     width: 130px;
     font-weight: 500;
-    margin-left: 59px;
+    margin-left: 27%;
     height: 46px;
     color: #000;
-    
+    /* margin: auto; */
     margin-bottom: 6px;
 
     background-color: #f5f4f4;
@@ -52,11 +52,14 @@
   
   .addbtn:active {
     transform: translateY(-1px);
+    
   }
 
 .dish-name-Dish{
   font-size: 25px;
   margin-left: 0px;
+  width: 280%;
+  text-align: left;
 }
 
 .dish-rate-Dish{

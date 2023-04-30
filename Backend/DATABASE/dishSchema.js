@@ -9,6 +9,10 @@ const dishSchema=new mongoose.Schema({
     qty:Number
 })
 
+const chartDataSchema=new mongoose.Schema({
+    name:String,
+    qty:Number
+})
 const orderSchema=new mongoose.Schema({
     cname:String,
     cemail:String,
@@ -68,5 +72,5 @@ userSchema.pre('save',async function(next){
 const dishModel=mongoose.model('Dish',dishSchema);
 const orderModel=mongoose.model('order',orderSchema);
 const userModel=mongoose.model('User',userSchema)
-
-module.exports={dishModel,orderModel,userModel}
+const chartModel=mongoose.model('chartData',chartDataSchema)
+module.exports={dishModel,orderModel,userModel,chartModel}

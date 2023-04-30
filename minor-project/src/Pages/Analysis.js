@@ -116,9 +116,13 @@ function Analysis() {
                         <input type="date" placeholder='Select day' onChange={(e) => setDate(e.target.value)} />
 
 
+                        <NavLink to='/chart' className="edit-btn">
+                            check analysis
+                        </NavLink>
                         <NavLink to='/editMenu' className="edit-btn">
                             Edit Menu
                         </NavLink>
+                        <span>Table:{table}</span>
                     </div>
                 </div>
 
@@ -149,9 +153,9 @@ function Analysis() {
                     <div className="order-description">
                         <div className="table-desc">
                             <span>Name</span>
-                            <span>ID</span>
+                            
                             <span>Quantity</span>
-                            <span>Table:{table}</span>
+                            
                         </div>
                         <div className="order-list">
 

@@ -11,6 +11,7 @@ import Login from './Pages/Login';
 import Analysis from './Pages/Analysis'
 import Registration from './Pages/Registration';
 import EditMenu from './Pages/EditMenu';
+import ChartPage from './Pages/ChartPage';
 
 
 // import NewSummary from './Pages/NewSummary'
@@ -37,6 +38,7 @@ const App = () => {
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/analysis' element={<Analysis/>}></Route>
               <Route path='/editMenu' element={<EditMenu/>}></Route>
+              <Route path='/chart' element={<ChartPage/>}></Route>
           </Routes>
        </BrowserRouter>    
     </TableNumContext>

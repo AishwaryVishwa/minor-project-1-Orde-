@@ -18,7 +18,8 @@ function Header() {
 
             <div className='navbar'>
 
-                <h1>Restaurant</h1>
+                 <h1>Restaurant</h1>
+                {/* <img src='logo.png' ></img> */}
 
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
