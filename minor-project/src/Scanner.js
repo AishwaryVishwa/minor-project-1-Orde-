@@ -11,25 +11,13 @@ function Scanner() {
   
   
     <div className="camera">
-
-    <QrReader
-        onResult={(result, error) => {
-          if (!!result) {
-            setTable(result?.text);
-          }
-
-          if (!!error) {
-            // console.info(error);
-          }
-        }}
-        containerStyle={{ width: '400px' }}
-        style={{ width: '400px' }}
-      />
+ 
+    
        </div> 
 
 <div className="data">
 
-      <p>Your table number is {table}</p>
+      <p>Your table number is  {table}</p>
       {/* {(data!=='no data'?<NavLink className='sender' to={'/menu'} >Open menu</NavLink>:<h1></h1>)} */}
 <NavLink className='sender' to={'/menu'} >Open menu</NavLink>
 </div>

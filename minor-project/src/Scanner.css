@@ -1,11 +1,22 @@
 .camera{
     padding-left: 36%;
+    height: 400px;
+    width: 200px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url('https://i.pinimg.com/originals/67/d0/13/67d0137c6517d5ed0fcc461f2582dcfd.gif');
 }
-
+p{
+    font-size: 20px;
+}
 .data{
-    padding-left:44%;
+    padding-left:40%;
+    font-size: large;
 }
 
 .sender{
     padding-left: 7%;
+}
+.input{
+    border-bottom: 1px solid;
 }
